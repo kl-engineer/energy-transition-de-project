@@ -25,8 +25,8 @@ The goal is to assess whether the green transition leads to measurable emission 
 - Jupyter Notebooks
 
 # Data Sources
-- Our World in Data - Energy Data
-- Our World in Data - CO2 Data
+- Our World in Data (OWiD) - Energy Data
+- Our World in Data (OWiD) - CO2 Data
 - Eurostat - Electricity Prices
 - World Bank - Wages / GDP per capita
 
@@ -38,7 +38,7 @@ The goal is to assess whether the green transition leads to measurable emission 
 
 # ETL Pipeline Overview
 1. Extract
-   - Download datasets from OWID / Eurostat / World Bank via direct URLs
+   - Download datasets from OWiD / Eurostat / World Bank via direct URLs
 
 2. Transform
    - Clean and standarize columns names
