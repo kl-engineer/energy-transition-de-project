@@ -1,6 +1,5 @@
 # Energy Transition Data Engineering Project
-A Data Engineering project analyzing how energy-related CO₂ emissions and electricity affordability have evolved in Poland (1990–present), compared to the EU average.
-The goal is to assess whether the green transition leads to measurable emission reductions and how it affects the cost of electricity for households.
+The project analyses long-term CO₂ emission trends from 1990 onwards and investigates the relationship between emissions and electricity affordability for the period where comparable electricity price data is available (2007–present), compared to the EU average. The goal is to assess whether the green transition leads to measurable emission reductions and how it affects the cost of electricity for households.
 
 ## Project Objectives
 - Build a complete ETL pipeline using Python / Databricks.
@@ -14,7 +13,24 @@ The goal is to assess whether the green transition leads to measurable emission 
 - Create visualizations and insights in Jupyter notebooks.
 
 ## Project Structure
-(Under development)
+Energy-Transition-Data-Engineering-Project
+│
+├── data/
+│   ├── raw/
+│   │   ├── owid_co2_data.csv
+│   │   └── electricity_prices.csv
+│   └── processed/
+│       ├── co2_poland_eu.csv
+│       └── electricity_prices_poland_eu.csv
+│
+├── notebooks/
+│   ├── 01_co2_exploration.ipynb
+│   ├── 02_electricity_prices_exploration.ipynb
+│   └── 03_data_integration.ipynb
+│
+├── src/
+├── sql/
+└── README.md
 
 ## Tech Stack
 - Python (Pandas, PySpark)
@@ -56,7 +72,8 @@ Link: https://ourworldindata.org/co2-and-greenhouse-gas-emissions
    - Create indexes for efficient querying
   
 ## Notebooks
-- exploration.ipynb - initial data exploration, visualizations, and insights.
+- 01_co2_exploration.ipynb - co2 data exploration, and fltering 
+- 02_electricity_prices_exploration.ipynb - electricity prices data exploration, ands filtering
 
 ## Status
 Project in progress - ETL pipeline under development
