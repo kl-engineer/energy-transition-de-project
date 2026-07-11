@@ -12,13 +12,26 @@ The project analyses long-term CO₂ emission trends from 1990 onwards and inves
    - electricity affordability index (kWh purchasable for average wage)
 - Create visualizations and insights in Jupyter notebooks.
 
+## Data Availability and Assumptions
+* CO₂ emissions data is available for the period 1990–present.
+* Comparable electricity price data from Eurostat is available from 2007 onwards.
+* The selected electricity price series uses:
+  * Geography: Poland (PL) and European Union (EU27_2020)
+  * Consumption band: KWH2500-4999
+  * Taxation: Including all taxes and levies (I_TAX)
+  * Currency: Euro (EUR)
+* The selected series contains a single missing value for Poland in 2007-S1. Annual prices will be calculated from the available semi-annual observations.
+* Therefore, the integrated analysis of emissions and electricity affordability will cover the period 2007–present.
+
 ## Project Structure
-Energy-Transition-Data-Engineering-Project
+
+```text
+Energy-Transition-Data-Engineering-Project/
 │
 ├── data/
 │   ├── raw/
 │   │   ├── owid_co2_data.csv
-│   │   └── electricity_prices.csv
+│   │   └── electricity_prices_raw.csv
 │   └── processed/
 │       ├── co2_poland_eu.csv
 │       └── electricity_prices_poland_eu.csv
@@ -31,6 +44,7 @@ Energy-Transition-Data-Engineering-Project
 ├── src/
 ├── sql/
 └── README.md
+```
 
 ## Tech Stack
 - Python (Pandas, PySpark)
@@ -46,10 +60,12 @@ Dataset: Annual CO2 emissions (fossil CO2)
 Source: Global Carbon Project, "Global Carbon Budget v15".  
 License: CC BY 4.0  
 Link: https://ourworldindata.org/co2-and-greenhouse-gas-emissions
-  
-- Our World in Data (OWiD) - CO2 Data
-- Eurostat - Electricity Prices
-- World Bank - Wages / GDP per capita
+
+- **Electricity prices for household consumers**  
+Dataset: Electricity prices for household consumers (nrg_pc_204)  
+Source: Eurostat (accessed through Eurostat API via the eurostat Python package)  
+License: Eurostat reuse policy  
+Link: https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table?lang=en
 
 ## Key Metrics
 - Energy-related CO2 emissions (MtCO2)
@@ -59,7 +75,8 @@ Link: https://ourworldindata.org/co2-and-greenhouse-gas-emissions
 
 ## ETL Pipeline Overview
 1. Extract
-   - Download datasets from OWiD / Eurostat / World Bank via direct URLs
+   - Download datasets from OWiD and World Bank via direct URLs
+   - Retrieve Eurostat datasets programmatically through the Eurostat API
 
 2. Transform
    - Clean and standarize columns names
@@ -72,8 +89,9 @@ Link: https://ourworldindata.org/co2-and-greenhouse-gas-emissions
    - Create indexes for efficient querying
   
 ## Notebooks
-- 01_co2_exploration.ipynb - co2 data exploration, and fltering 
-- 02_electricity_prices_exploration.ipynb - electricity prices data exploration, ands filtering
+- 01_co2_exploration.ipynb - CO₂ data exploration and filtering.
+- 02_electricity_prices_exploration.ipynb - Electricity prices data exploration and filtering.
+- 03_data_integration.ipynb - Integration of datasets and preparation of the analytical dataset.
 
 ## Status
 Project in progress - ETL pipeline under development
