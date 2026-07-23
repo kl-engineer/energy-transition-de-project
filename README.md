@@ -31,7 +31,7 @@ Energy-Transition-Data-Engineering-Project/
 ├── data/
 │   ├── raw/
 │   │   ├── owid_co2_data.csv
-│   │   └── electricity_prices_raw.csv
+│   │   └── eurostat_energy_prices.csv
 │   └── processed/
 │       ├── co2_poland_eu.csv
 │       └── electricity_prices_poland_eu.csv
