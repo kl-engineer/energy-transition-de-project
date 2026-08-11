@@ -3,7 +3,7 @@ The project analyses long-term CO₂ emission trends from 1990 onwards and inves
 
 ## Project Objectives
 - Build a complete ETL pipeline using Python / Databricks.
-- Collect and process data from Our World in Data, Eurostat, and World Bank.
+- Collect and process data from Our World in Data and Eurostat.
 - Model and store data in a PostgreSQL warehouse.
 - Analyze long-term trends in:
    - CO2 emissions from energy production
@@ -20,7 +20,8 @@ The project analyses long-term CO₂ emission trends from 1990 onwards and inves
   * Consumption band: KWH2500-4999
   * Taxation: Including all taxes and levies (I_TAX)
   * Currency: Euro (EUR)
-* The selected series contains a single missing value for Poland in 2007-S1. Annual prices will be calculated from the available semi-annual observations.
+* The selected series contains a single missing value for Poland in 2007-S1. Annual prices will be calculated from the
+  available semi-annual observations.
 * Therefore, the integrated analysis of emissions and electricity affordability will cover the period 2007–present.
 
 ## Project Structure
@@ -40,6 +41,7 @@ Energy-Transition-Data-Engineering-Project/
 │   ├── 01_co2_exploration.ipynb
 │   ├── 02_electricity_prices_exploration.ipynb
 │   └── 03_data_integration.ipynb
+│   └── 04_wages.ipynb
 │
 ├── src/
 ├── sql/
@@ -67,6 +69,12 @@ Source: Eurostat (accessed through Eurostat API via the eurostat Python package)
 License: Eurostat reuse policy  
 Link: https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table?lang=en
 
+- **Annual net earnings**   
+Dataset: Annual net earnings (earn_nt_net)   
+Source: Eurostat   
+License: Eurostat reuse policy   
+Link: https://ec.europa.eu/eurostat/databrowser/view/earn_nt_net/default/table?lang=en
+
 ## Key Metrics
 - Energy-related CO2 emissions (MtCO2)
 - Electricity price for household (€/kWh)
@@ -75,7 +83,7 @@ Link: https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table?la
 
 ## ETL Pipeline Overview
 1. Extract
-   - Download datasets from OWiD and World Bank via direct URLs
+   - Download datasets from OWiD via direct URL
    - Retrieve Eurostat datasets programmatically through the Eurostat API
 
 2. Transform
@@ -92,6 +100,7 @@ Link: https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table?la
 - 01_co2_exploration.ipynb - CO₂ data exploration and filtering.
 - 02_electricity_prices_exploration.ipynb - Electricity prices data exploration and filtering.
 - 03_data_integration.ipynb - Integration of datasets and preparation of the analytical dataset.
+- 04_wages.ipynb - wages data exploration and filtering.
 
 ## Status
 Project in progress - ETL pipeline under development
