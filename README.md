@@ -71,7 +71,7 @@ Link: https://ec.europa.eu/eurostat/databrowser/view/nrg_pc_204/default/table?la
 
 - **Annual net earnings**   
 Dataset: Annual net earnings (earn_nt_net)   
-Source: Eurostat   
+Source: Eurostat (accessed through Eurostat API via the eurostat Python package)   
 License: Eurostat reuse policy   
 Link: https://ec.europa.eu/eurostat/databrowser/view/earn_nt_net/default/table?lang=en
 
