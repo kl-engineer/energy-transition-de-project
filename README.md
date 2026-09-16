@@ -33,9 +33,13 @@ Energy-Transition-Data-Engineering-Project/
 │   ├── raw/
 │   │   ├── owid_co2_data.csv
 │   │   └── eurostat_energy_prices.csv
+│   │   └── eurostat_wages.csv
 │   └── processed/
 │       ├── co2_poland_eu.csv
 │       └── electricity_prices_poland_eu.csv
+│       └── energy_transition_merged.csv
+│       └── eurostat_wages_processed.csv
+│       └── population_poland_eu.csv
 │
 ├── notebooks/
 │   ├── 01_co2_exploration.ipynb
