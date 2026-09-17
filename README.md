@@ -22,7 +22,17 @@ The project analyses long-term CO₂ emission trends from 1990 onwards and inves
   * Currency: Euro (EUR)
 * The selected series contains a single missing value for Poland in 2007-S1. Annual prices will be calculated from the
   available semi-annual observations.
-* Therefore, the integrated analysis of emissions and electricity affordability will cover the period 2007–present.
+* The selected wages series uses:
+  * Geography: Poland (PL) and European Union (EU27_2020)
+  * Earnings case: single person without children earning 100% of the average (P1_NCH_AW100)
+  * Earnings structure: Net earning (NET)
+  * Currency: Euro (EUR)
+* The selected series doesn't contain wages for EU27 for years 2007-2012. Therefore, wages will be analysed for years 2013 until 2024.
+* Taking all above informations into consideration:
+  - CO2 analysis will be performed for years 1990-2024
+  - Electricity prices analysis will be performed for years 2007-2024
+  - Wages will be analysed for years 2013-2024
+  - The affordability index will cover period 2013-2024
 
 ## Project Structure
 
@@ -48,7 +58,18 @@ Energy-Transition-Data-Engineering-Project/
 │   └── 04_wages.ipynb
 │
 ├── src/
+│
 ├── sql/
+│   ├── ddl/
+│   │   └── create_tables.sql
+│   ├── validation/
+│   │   └── data_quality_checks.sql
+│   └── analysis/
+│       ├── co2_analysis.sql
+│       ├── electricity_price_analysis.sql
+│       ├── wages_analysis.sql
+│       └── affordability_analysis.sql
+│
 └── README.md
 ```
 
