@@ -1,3 +1,5 @@
 psycopg[binary]
 pandas
 eurostat
+python-dotenv
+matplotlib.pyplot
