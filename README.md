@@ -56,6 +56,7 @@ Energy-Transition-Data-Engineering-Project/
 │   ├── 02_electricity_prices_exploration.ipynb
 │   └── 03_data_integration.ipynb
 │   └── 04_wages.ipynb
+│   └── 05_energy_affordability_analysis.ipynb
 │
 ├── src/
 │
@@ -70,11 +71,17 @@ Energy-Transition-Data-Engineering-Project/
 │       ├── wages_analysis.sql
 │       └── affordability_analysis.sql
 │
+├── requirements.txt
+│
+├── .env.example
+│
+├── .gitignore
+│
 └── README.md
 ```
 
 ## Tech Stack
-- Python (Pandas, PySpark)
+- Python (Pandas, Psycopg, Dotenv, Matplotlib, PySpark)
 - Databricks
 - PostgreSQL
 - SQL
@@ -103,7 +110,7 @@ Link: https://ec.europa.eu/eurostat/databrowser/view/earn_nt_net/default/table?l
 ## Key Metrics
 - Energy-related CO2 emissions (MtCO2)
 - Electricity price for household (€/kWh)
-- Average wage (PLN / EUR)
+- Average wage (EUR)
 - Electricity affordability index (kWh purchasable for average monthly wage)
 
 ## ETL Pipeline Overview
@@ -125,7 +132,8 @@ Link: https://ec.europa.eu/eurostat/databrowser/view/earn_nt_net/default/table?l
 - 01_co2_exploration.ipynb - CO₂ data exploration and filtering.
 - 02_electricity_prices_exploration.ipynb - Electricity prices data exploration and filtering.
 - 03_data_integration.ipynb - Integration of datasets and preparation of the analytical dataset.
-- 04_wages.ipynb - wages data exploration and filtering.
+- 04_wages.ipynb - Wages data exploration and filtering.
+- 05_energy_affordability_analysis.ipynb - Visualisations of CO2 emissions, electricity prices, wages, and energy affordability change over time.
 
 ## Status
 Project in progress - ETL pipeline under development
