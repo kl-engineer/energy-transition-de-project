@@ -1,5 +1,5 @@
 # Energy Transition Data Engineering Project
-The project analyses long-term CO₂ emission trends from 1990 onwards and investigates the relationship between emissions and electricity affordability for the period where comparable electricity price data is available (2007–present), compared to the EU average. The goal is to assess whether the green transition leads to measurable emission reductions and how it affects the cost of electricity for households.
+The project analyses long-term CO₂ emission trends from 1990 onwards and investigates the relationship between emissions and household electricity affordability in Poland compared with the EU average. The analysis covers the period for which comparable electricity price data is available (2007–2024), while the affordability analysis is limited to 2013–2024 due to data availability.
 
 ## Project Objectives
 - Build a complete ETL pipeline using Python / Databricks.
@@ -111,7 +111,7 @@ Link: https://ec.europa.eu/eurostat/databrowser/view/earn_nt_net/default/table?l
 - Energy-related CO2 emissions (MtCO2)
 - Electricity price for household (€/kWh)
 - Average wage (EUR)
-- Electricity affordability index (kWh purchasable for average monthly wage)
+- Electricity affordability index (kWh purchasable with annual modelled net earnings)
 
 ## ETL Pipeline Overview
 1. Extract
@@ -121,7 +121,6 @@ Link: https://ec.europa.eu/eurostat/databrowser/view/earn_nt_net/default/table?l
 2. Transform
    - Clean and standarize columns names
    - Handle missing values
-   - Convert units (e.g. €/kWh → PLN/kWh)
    - Compute derived metrics (affordability index)
 
 3. Load
